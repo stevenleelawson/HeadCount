@@ -54,7 +54,12 @@ export default class DistrictRepository {
       const rounded = parseFloat(num.toFixed(3))
       return total + rounded
     },0)
-    console.log('total', yearDataTotal)
     return Math.round((yearDataTotal / yearData.length) *1000) /1000
+  }
+  compareDistrictAverages(location1, location2) {
+    const avg1 = this.findAverage(location1)
+    const avg2 = this.findAverage(location2)
+    const dividend = Math.round((avg1 / avg2) * 1000) / 1000;
+    return {[location1.toUpperCase()]: avg1, [location2.toUpperCase()]: avg2, 'compared': dividend}
   }
 }

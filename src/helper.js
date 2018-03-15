@@ -17,7 +17,7 @@ export default class DistrictRepository {
       districtObj[district.Location.toUpperCase()].data[district.TimeFrame] = this.numberHelper(district.Data);
      return districtObj
     }, {})
-  } 
+  }
 
   numberHelper(num) {
     if (isNaN(num)) {
@@ -46,6 +46,15 @@ export default class DistrictRepository {
       }
       return dataArray;
     },[])
-  
+
   }
-}  
+  findAverage(location) {
+    const yearData = Object.values(this.stats[location.toUpperCase()].data)
+    const yearDataTotal = yearData.reduce( (total, num) => {
+      const rounded = parseFloat(num.toFixed(3))
+      return total + rounded
+    },0)
+    console.log('total', yearDataTotal)
+    return Math.round((yearDataTotal / yearData.length) *1000) /1000
+  }
+}

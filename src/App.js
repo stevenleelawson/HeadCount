@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import KinderData from './data/kindergartners_in_full_day_program';
-import DistrictRepository from './helper';
+import DistrictRepository, {findByName} from './helper';
 import CardContainer from './CardContainer';
 import SearchBar from './SearchBar';
 
@@ -14,14 +14,19 @@ class App extends Component {
     }
   }
 
-  retrieveData = (userInput = '') =>{
+  retrieveData = (userInput = '') => {
     const district = new DistrictRepository(KinderData);
     const schools = district.findAllMatches(userInput);
     this.setState({ districtArray: schools})
   }
 
   handleClick = (event) => {
-    this.setState({ selectedCards: [...this.state.selectedCards, event.target.id] })
+    const location = event.target.id
+    const allCards = new DistrictRepository(KinderData)
+    const selectedCard = allCards.findByName(location)
+    console.log(selectedCard)
+
+    this.setState({ selectedCards: [...this.state.selectedCards, selectedCard] })
   }
 
   componentDidMount() {

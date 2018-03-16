@@ -21,7 +21,7 @@ class App extends Component {
   }
 
   handleClick = (event) => {
-    console.log(event.target.id)
+    this.setState({ selectedCards: [...this.state.selectedCards, event.target.id] })
   }
 
   componentDidMount() {

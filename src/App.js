@@ -10,32 +10,30 @@ class App extends Component {
     super();
     this.state = {
       districtArray: [],
-      selectedCards: []
+      selectedCards: [],
     }
+
+    this.districts = new DistrictRepository(KinderData)
   }
 
   retrieveData = (userInput = '') => {
-    const district = new DistrictRepository(KinderData);
-    const schools = district.findAllMatches(userInput);
+    const schools = this.districts.findAllMatches(userInput);
     this.setState({ districtArray: schools})
   }
 
   handleClick = (event) => {
     const location = event.target.id
-    const allCards = new DistrictRepository(KinderData)
-    const selectedCard = allCards.findByName(location)
+    const selectedCard = this.districts.findByName(location)
+    const selectedArray = this.state.selectedCards
     console.log(selectedCard)
-
-    if (this.state.selectedCards.includes(selectedCard)) {
-      this.setState({ selectedCards: this.state.selectedCards.filter(  compareLocation => compareLocation !== selectedCard) })
+    const alreadyThere = selectedArray.some(district => district.location === location)
+    if (alreadyThere) {
+      const selectedCards = selectedArray.filter((district) => district.location != selectedCard.location);
+      this.setState({selectedCards})
       return
     }
-    if (this.state.selectedCards.length >= 1){
-      // this.state.selectedCards.shift()
-      //slice instead
-      this.setState({ selectedCards: [this.state.selectedCards[0], selectedCard] })
-    } else {
-      this.setState({ selectedCards: [...this.state.selectedCards, selectedCard]})
+    if (selectedArray.length <2){
+      this.setState({ selectedCards : [...selectedArray, selectedCard] })
     }
   }
 

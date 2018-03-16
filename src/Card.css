@@ -18,3 +18,11 @@ ul {
   width: 18rem;
   margin: .5rem;
 }
+
+.district-data{
+  pointer-events: none;
+}
+
+.district-name{
+  pointer-events: none;
+}

@@ -10,6 +10,7 @@ class App extends Component {
     super();
     this.state = {
       districtArray: [],
+      selectedCards: []
     }
   }
 
@@ -19,12 +20,9 @@ class App extends Component {
     this.setState({ districtArray: schools})
   }
 
-  // filterSchools = (userInput) => {
-
-  //   this.setState({districtArray: userInput});
-  // }
-// Need a function that calls findAllMatches with
-// the state from SearchBar
+  handleClick = (event) => {
+    console.log(event.target.id)
+  }
 
   componentDidMount() {
     this.retrieveData()
@@ -34,7 +32,7 @@ class App extends Component {
     return (
       <div>
         <SearchBar filterSchools={this.retrieveData}/>
-        <CardContainer schools={this.state.districtArray}/>
+        <CardContainer schools={this.state.districtArray} handleClick={this.handleClick}/>
       </div>
     );
   }

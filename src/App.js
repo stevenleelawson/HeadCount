@@ -25,8 +25,8 @@ class App extends Component {
     const location = event.target.id
     const selectedCard = this.districts.findByName(location)
     const selectedArray = this.state.selectedCards
-    console.log(selectedCard)
     const alreadyThere = selectedArray.some(district => district.location === location)
+
     if (alreadyThere) {
       const selectedCards = selectedArray.filter((district) => district.location != selectedCard.location);
       this.setState({selectedCards})
@@ -34,6 +34,10 @@ class App extends Component {
     }
     if (selectedArray.length <2){
       this.setState({ selectedCards : [...selectedArray, selectedCard] })
+    } else if (selectedArray.length ===2) {
+      const newArray = [...selectedArray]
+      newArray.shift();
+      this.setState({ selectedCards : [...newArray, selectedCard] })
     }
   }
 

@@ -26,7 +26,17 @@ class App extends Component {
     const selectedCard = allCards.findByName(location)
     console.log(selectedCard)
 
-    this.setState({ selectedCards: [...this.state.selectedCards, selectedCard] })
+    if (this.state.selectedCards.includes(selectedCard)) {
+      this.setState({ selectedCards: this.state.selectedCards.filter(  compareLocation => compareLocation !== selectedCard) })
+      return
+    }
+    if (this.state.selectedCards.length >= 1){
+      // this.state.selectedCards.shift()
+      //slice instead
+      this.setState({ selectedCards: [this.state.selectedCards[0], selectedCard] })
+    } else {
+      this.setState({ selectedCards: [...this.state.selectedCards, selectedCard]})
+    }
   }
 
   componentDidMount() {

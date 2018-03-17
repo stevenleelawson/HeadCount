@@ -33,17 +33,19 @@ class App extends Component {
       this.setState({selectedCards})
       return
     }
-    if (selectedArray.length <2) {
+
+    if (selectedArray.length === 0) {
+      this.setState({ selectedCards : [selectedCard] })
+    } else if (selectedArray.length === 1) {
       this.setState({ selectedCards : [...selectedArray, selectedCard] })
-      if (selectedArray[0]) {
-        this.getAverageOfSelected(selectedArray[0], selectedCard)
-      }
-    } else if (selectedArray.length ===2) {
+      this.getAverageOfSelected(selectedArray[0], selectedCard)
+    } else if (selectedArray.length === 2) {
       const newSelected = [...selectedArray]
       newSelected.shift();
       this.setState({ selectedCards : [...newSelected, selectedCard] })
       this.getAverageOfSelected(newSelected[0], selectedCard)
     }
+
   }
 
   getAverageOfSelected = (location1, location2) => {

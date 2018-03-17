@@ -11,6 +11,7 @@ class App extends Component {
     this.state = {
       districtArray: [],
       selectedCards: [],
+      averages: []
     }
 
     this.districts = new DistrictRepository(KinderData)
@@ -34,12 +35,29 @@ class App extends Component {
     }
     if (selectedArray.length <2){
       this.setState({ selectedCards : [...selectedArray, selectedCard] })
+      this.getAveragefSelected(selectedCard.location)
     } else if (selectedArray.length ===2) {
-      const newArray = [...selectedArray]
-      newArray.shift();
-      this.setState({ selectedCards : [...newArray, selectedCard] })
+      const newSelected = [...selectedArray]
+      newSelected.shift();
+      this.setState({ selectedCards : [...newSelected, selectedCard] })
+      this.getAveragefSelected(selectedCard.location)
     }
   }
+
+  getAveragefSelected = (location) => {
+    const averagesArray = this.state.averages
+    const average = this.districts.findAverage(location);
+
+    if (averagesArray.length < 2) {
+      this.setState({averages: [...averagesArray, average]})  
+    } else if (averagesArray.length === 2) {
+      averagesArray.shift();
+      this.setState({averages: [...averagesArray, average]})
+    }
+  }
+  // want to take two selected cards, run find averages on them, 
+  // run compareaverages on those two, and create a card
+  // displaying info from that 
 
   componentDidMount() {
     this.retrieveData()

@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 const CardContainer = ({ schools, handleClick, toggleClass, selected }) => {
   const schoolCards = schools.map( (school, index) => {
   const selectedCardLocations = selected.map( name => name.location);
-  console.log(selectedCardLocations)
   const selectedClass = selectedCardLocations.includes(school.location) ? 'selected' : ''
 
     return <Card

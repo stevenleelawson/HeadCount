@@ -1,6 +1,9 @@
 # HeadCount 2.0
+## Amy Russel and Steven Lee Lawson
 
-HeadCount 2.0 is a project designed to challenge your skills at manipulating data and creating small, reusable React components.  
+After cloning down the repo, please run 'npm install'
+
+HeadCount 2.0 is a project that tested our skills at skills at manipulating data and creating small, reusable React components.  
 
 You will start the project by importing files containing various educational stats from districts within Colorado by year, per district.  
 

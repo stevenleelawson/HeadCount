@@ -1,5 +1,6 @@
 import React from 'react';
-import './Card.css' 
+import './Card.css'
+import PropTypes from 'prop-types';
 
 const Card = (props) => {
   const dataMap = Object.keys(props.data).map( year => {
@@ -10,6 +11,13 @@ const Card = (props) => {
       <ul className="district-data">{dataMap}</ul>
     </div>
   )
+}
+
+Card.propTypes = {
+  location: PropTypes.string.isRequired,
+  data: PropTypes.object.isRequired,
+  handleClick: PropTypes.func.isRequired,
+  selectedClass: PropTypes.string.isRequired
 }
 
 export default Card;

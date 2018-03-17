@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DistrictRepository from './helper.js';
+import PropTypes from 'prop-types';
 
 export default class SearchBar extends Component {
   constructor() {
@@ -24,4 +25,8 @@ export default class SearchBar extends Component {
       </div>
     )
   }
+}
+
+SearchBar.propTypes = {
+  filterSchools: PropTypes.func.isRequired
 }

@@ -11,7 +11,6 @@ class App extends Component {
     this.state = {
       districtArray: [],
       selectedCards: [],
-      selectClass: false
     }
 
     this.districts = new DistrictRepository(KinderData)
@@ -42,10 +41,6 @@ class App extends Component {
     }
   }
 
-  toggleClass = () => {
-    this.setState({selectClass: !this.state.selectClass})
-  }
-
   componentDidMount() {
     this.retrieveData()
   }
@@ -54,7 +49,7 @@ class App extends Component {
     return (
       <div>
         <SearchBar filterSchools={this.retrieveData}/>
-        <CardContainer schools={this.state.districtArray} handleClick={this.handleClick} toggleClass={this.toggleClass} selected={this.state.selectClass}/>
+        <CardContainer schools={this.state.districtArray} handleClick={this.handleClick} toggleClass={this.toggleClass} selected={this.state.selectedCards}/>
       </div>
     );
   }

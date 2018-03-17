@@ -4,13 +4,16 @@ import './CardContainer.css'
 
 const CardContainer = ({ schools, handleClick, toggleClass, selected }) => {
   const schoolCards = schools.map( (school, index) => {
+  const selectedCardLocations = selected.map( name => name.location);
+  console.log(selectedCardLocations)
+  const selectedClass = selectedCardLocations.includes(school.location) ? 'selected' : ''
 
     return <Card
       {...school}
       key={school.location}
       handleClick={handleClick}
       toggleClass={toggleClass}
-      selected={selected} />
+      selectedClass={selectedClass} />
   })
   return (
     <div className="card-container">{schoolCards}</div>

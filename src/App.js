@@ -4,6 +4,8 @@ import KinderData from './data/kindergartners_in_full_day_program';
 import DistrictRepository, {findByName} from './helper';
 import CardContainer from './CardContainer';
 import SearchBar from './SearchBar';
+import CompareCard from './CompareCard';
+
 
 class App extends Component {
   constructor() {
@@ -11,7 +13,7 @@ class App extends Component {
     this.state = {
       districtArray: [],
       selectedCards: [],
-      averages: {},
+      averages: null
     }
 
     this.districts = new DistrictRepository(KinderData)
@@ -50,12 +52,12 @@ class App extends Component {
     const comparison = this.districts.compareDistrictAverages(location1.location, location2.location)
     this.setState({averages:comparison})
   }
-  
 
-  
-  // want to take two selected cards, run find averages on them, 
+
+
+  // want to take two selected cards, run find averages on them,
   // run compareaverages on those two, and create a card
-  // displaying info from that 
+  // displaying info from that
 
   componentDidMount() {
     this.retrieveData()
@@ -64,8 +66,13 @@ class App extends Component {
   render() {
     return (
       <div>
+        {
+          this.state.averages &&
+          <CompareCard averages={this.state.averages}/>
+        }
         <SearchBar filterSchools={this.retrieveData}/>
         <CardContainer schools={this.state.districtArray} handleClick={this.handleClick} toggleClass={this.toggleClass} selected={this.state.selectedCards}/>
+
       </div>
     );
   }

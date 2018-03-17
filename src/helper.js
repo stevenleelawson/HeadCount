@@ -48,6 +48,7 @@ export default class DistrictRepository {
     },[])
 
   }
+
   findAverage(location) {
     const yearData = Object.values(this.stats[location.toUpperCase()].data)
     const yearDataTotal = yearData.reduce( (total, num) => {
@@ -56,6 +57,7 @@ export default class DistrictRepository {
     },0)
     return Math.round((yearDataTotal / yearData.length) *1000) /1000
   }
+  
   compareDistrictAverages(location1, location2) {
     const avg1 = this.findAverage(location1)
     const avg2 = this.findAverage(location2)

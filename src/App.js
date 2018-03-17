@@ -11,7 +11,7 @@ class App extends Component {
     this.state = {
       districtArray: [],
       selectedCards: [],
-      averages: []
+      averages: {},
     }
 
     this.districts = new DistrictRepository(KinderData)
@@ -33,28 +33,26 @@ class App extends Component {
       this.setState({selectedCards})
       return
     }
-    if (selectedArray.length <2){
+    if (selectedArray.length <2) {
       this.setState({ selectedCards : [...selectedArray, selectedCard] })
-      this.getAveragefSelected(selectedCard.location)
+      if (selectedArray[0]) {
+        this.getAverageOfSelected(selectedArray[0], selectedCard)
+      }
     } else if (selectedArray.length ===2) {
       const newSelected = [...selectedArray]
       newSelected.shift();
       this.setState({ selectedCards : [...newSelected, selectedCard] })
-      this.getAveragefSelected(selectedCard.location)
+      this.getAverageOfSelected(newSelected[0], selectedCard)
     }
   }
 
-  getAveragefSelected = (location) => {
-    const averagesArray = this.state.averages
-    const average = this.districts.findAverage(location);
-
-    if (averagesArray.length < 2) {
-      this.setState({averages: [...averagesArray, average]})  
-    } else if (averagesArray.length === 2) {
-      averagesArray.shift();
-      this.setState({averages: [...averagesArray, average]})
-    }
+  getAverageOfSelected = (location1, location2) => {
+    const comparison = this.districts.compareDistrictAverages(location1.location, location2.location)
+    this.setState({averages:comparison})
   }
+  
+
+  
   // want to take two selected cards, run find averages on them, 
   // run compareaverages on those two, and create a card
   // displaying info from that 

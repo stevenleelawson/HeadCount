@@ -1,1 +1,7 @@
 /*APP COMPONENT RELATED CSS GOES HERE*/
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

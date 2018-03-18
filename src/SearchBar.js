@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DistrictRepository from './helper.js';
+import './SearchBar.css'
 import PropTypes from 'prop-types';
 
 export default class SearchBar extends Component {
@@ -19,8 +20,8 @@ export default class SearchBar extends Component {
     return (
       <div>
         <form >
-          <input type='text' onChange={this.handleChange}/>
-          <input type='submit'/>
+          <input className='filter' type='text' placeholder='Type to filter districts' onChange={this.handleChange}/>
+          {/* <input type='submit'/> */}
         </form>
       </div>
     )

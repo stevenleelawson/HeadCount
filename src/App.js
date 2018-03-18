@@ -5,6 +5,7 @@ import DistrictRepository, {findByName} from './helper';
 import CardContainer from './CardContainer';
 import SearchBar from './SearchBar';
 import CompareCard from './CompareCard';
+import Header from './Header'
 
 
 class App extends Component {
@@ -67,12 +68,12 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className='app'>
+        <Header filterSchools={this.retrieveData}/>
         {
           this.state.averages &&
           <CompareCard averages={this.state.averages}/>
         }
-        <SearchBar filterSchools={this.retrieveData}/>
         <CardContainer schools={this.state.districtArray} handleClick={this.handleClick} toggleClass={this.toggleClass} selected={this.state.selectedCards}/>
 
       </div>

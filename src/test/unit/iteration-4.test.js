@@ -24,6 +24,3 @@ describe('DistrictRepository iteration 0', () =>  {
   });
 
 });
-
-
-return { [location1.name]: avg1, [location2.name]: avg2, "compared": compared}

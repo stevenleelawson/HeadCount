@@ -18,9 +18,10 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <SearchBar
+        <Header
           filterSchools={[Function]}
 />,
+        null,
         <CardContainer
           handleClick={[Function]}
           schools={
@@ -2927,13 +2928,14 @@ ShallowWrapper {
           toggleClass={undefined}
 />,
       ],
+      "className": "app",
     },
     "ref": null,
     "rendered": Array [
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "function",
         "props": Object {
           "filterSchools": [Function],
         },
@@ -2941,6 +2943,7 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
+      null,
       Object {
         "instance": null,
         "key": undefined,
@@ -5862,9 +5865,10 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <SearchBar
+          <Header
             filterSchools={[Function]}
 />,
+          null,
           <CardContainer
             handleClick={[Function]}
             schools={
@@ -8771,13 +8775,14 @@ ShallowWrapper {
             toggleClass={undefined}
 />,
         ],
+        "className": "app",
       },
       "ref": null,
       "rendered": Array [
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
             "filterSchools": [Function],
           },
@@ -8785,6 +8790,7 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
+        null,
         Object {
           "instance": null,
           "key": undefined,

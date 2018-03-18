@@ -56,12 +56,6 @@ class App extends Component {
     this.setState({averages:comparison})
   }
 
-
-
-  // want to take two selected cards, run find averages on them,
-  // run compareaverages on those two, and create a card
-  // displaying info from that
-
   componentDidMount() {
     this.retrieveData()
   }

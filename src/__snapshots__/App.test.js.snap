@@ -18,6 +18,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
+        null,
         <SearchBar
           filterSchools={[Function]}
 />,
@@ -2930,6 +2931,7 @@ ShallowWrapper {
     },
     "ref": null,
     "rendered": Array [
+      null,
       Object {
         "instance": null,
         "key": undefined,
@@ -5862,6 +5864,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
+          null,
           <SearchBar
             filterSchools={[Function]}
 />,
@@ -8774,6 +8777,7 @@ ShallowWrapper {
       },
       "ref": null,
       "rendered": Array [
+        null,
         Object {
           "instance": null,
           "key": undefined,

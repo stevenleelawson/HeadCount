@@ -14,10 +14,10 @@ const Card = (props) => {
 }
 
 Card.propTypes = {
-  location: PropTypes.string.isRequired,
-  data: PropTypes.object.isRequired,
-  handleClick: PropTypes.func.isRequired,
-  selectedClass: PropTypes.string.isRequired
+  location: PropTypes.string,
+  data: PropTypes.object,
+  handleClick: PropTypes.func,
+  selectedClass: PropTypes.string
 }
 
 export default Card;

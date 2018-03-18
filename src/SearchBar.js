@@ -12,6 +12,7 @@ export default class SearchBar extends Component {
   }
 
   handleChange = (e) => {
+    console.log('handlechage', e.target)
     this.setState({'search':e.target.value})
     this.props.filterSchools(this.state.search)
   }

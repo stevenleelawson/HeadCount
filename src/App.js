@@ -28,10 +28,12 @@ class App extends Component {
     const location = event.target.id;
     const selectedCard = this.districts.findByName(location);
     const selectedArray = this.state.selectedCards;
-    const alreadyThere = selectedArray.some(district => district.location === location);
+    const alreadyThere = selectedArray.some(district =>
+      district.location === location);
 
     if (alreadyThere) {
-      const selectedCards = selectedArray.filter((district) => district.location !== selectedCard.location);
+      const selectedCards = selectedArray.filter(
+        (district) => district.location !== selectedCard.location);
       this.setState({selectedCards});
       return;
     }
@@ -51,7 +53,8 @@ class App extends Component {
   }
 
   getAverageOfSelected = (location1, location2) => {
-    const comparison = this.districts.compareDistrictAverages(location1.location, location2.location);
+    const comparison = this.districts.compareDistrictAverages(
+      location1.location, location2.location);
     this.setState({averages:comparison});
   }
 
@@ -67,7 +70,10 @@ class App extends Component {
           this.state.averages &&
           <CompareCard averages={this.state.averages}/>
         }
-        <CardContainer schools={this.state.districtArray} handleClick={this.handleClick} toggleClass={this.toggleClass} selected={this.state.selectedCards}/>
+        <CardContainer schools={this.state.districtArray}
+          handleClick={this.handleClick}
+          toggleClass={this.toggleClass}
+          selected={this.state.selectedCards}/>
 
       </div>
     );

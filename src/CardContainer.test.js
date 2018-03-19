@@ -16,7 +16,11 @@ describe('CardContainer', () => {
       { location: 'Golden', data: {'2006': .848}}
     ];
 
-    const wrapper = shallow(<CardContainer schools={schools}/>)
+    const selected = [
+      { location: 'Denver', data: {'2006': .098}},
+    ]
+
+    const wrapper = shallow(<CardContainer schools={schools} selected={selected} handleClick={jest.fn()}/>)
     expect(wrapper).toMatchSnapshot();
   });
 

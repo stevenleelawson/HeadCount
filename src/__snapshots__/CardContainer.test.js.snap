@@ -1,0 +1,185 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardContainer should match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CardContainer
+    handleClick={[Function]}
+    schools={
+        Array [
+            Object {
+              "data": Object {
+                "2006": 0.098,
+              },
+              "location": "Denver",
+            },
+            Object {
+              "data": Object {
+                "2006": 0.848,
+              },
+              "location": "Golden",
+            },
+          ]
+    }
+    selected={
+        Array [
+            Object {
+              "data": Object {
+                "2006": 0.098,
+              },
+              "location": "Denver",
+            },
+          ]
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Card
+          data={
+                    Object {
+                              "2006": 0.098,
+                            }
+          }
+          handleClick={[Function]}
+          location="Denver"
+          selectedClass="selected"
+/>,
+        <Card
+          data={
+                    Object {
+                              "2006": 0.848,
+                            }
+          }
+          handleClick={[Function]}
+          location="Golden"
+          selectedClass=""
+/>,
+      ],
+      "className": "card-container",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "Denver",
+        "nodeType": "function",
+        "props": Object {
+          "data": Object {
+            "2006": 0.098,
+          },
+          "handleClick": [Function],
+          "location": "Denver",
+          "selectedClass": "selected",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "Golden",
+        "nodeType": "function",
+        "props": Object {
+          "data": Object {
+            "2006": 0.848,
+          },
+          "handleClick": [Function],
+          "location": "Golden",
+          "selectedClass": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Card
+            data={
+                        Object {
+                                    "2006": 0.098,
+                                  }
+            }
+            handleClick={[Function]}
+            location="Denver"
+            selectedClass="selected"
+/>,
+          <Card
+            data={
+                        Object {
+                                    "2006": 0.848,
+                                  }
+            }
+            handleClick={[Function]}
+            location="Golden"
+            selectedClass=""
+/>,
+        ],
+        "className": "card-container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "Denver",
+          "nodeType": "function",
+          "props": Object {
+            "data": Object {
+              "2006": 0.098,
+            },
+            "handleClick": [Function],
+            "location": "Denver",
+            "selectedClass": "selected",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "Golden",
+          "nodeType": "function",
+          "props": Object {
+            "data": Object {
+              "2006": 0.848,
+            },
+            "handleClick": [Function],
+            "location": "Golden",
+            "selectedClass": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

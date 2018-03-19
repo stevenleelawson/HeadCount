@@ -83,7 +83,26 @@ describe('App', () => {
     })
 
     it('should remove the first, and add a new object if two objects are already in selectedCards', () => {
-
+      const expectedState =  [
+        { "data": {
+            "2004": 1,
+            "2005": 0,
+            "2006": 1 },
+          "location": "AGATE 300" },
+        {"data": {
+            "2004": 0.302,
+            "2005": 0.267,
+            "2006": 0.354,
+            "2007": 0.392,
+            "2008": 0.385,
+            "2009": 0.39,
+            "2010": 0.436,
+            "2011": 0.489,
+            "2012": 0.479,
+            "2013": 0.488,
+            "2014": 0.49 },
+          "location": "ACADEMY 20"}
+      ]
       wrapper.setState({
         selectedCards: [
           { location: 'COLORADO',
@@ -100,7 +119,8 @@ describe('App', () => {
           }]})
       expect(wrapper.state('selectedCards').length).toBe(2)
       wrapper.instance().handleClick(mockEvent2);
-      expect(wrapper.state('selectedCards')).toMatchObject("ACADEMY 20")
+      console.log(wrapper.state('selectedCards'))
+      expect(wrapper.state('selectedCards')).toEqual(expectedState)
     })
 
     it('should not add more than two cards to selectedCards', () => {
@@ -164,10 +184,11 @@ describe('App', () => {
         selectedCards: [location1, location2],
         averages: null 
       })
-      
+
       wrapper.instance().handleClick(mockEvent3);
       expect(wrapper.instance().getAverageOfSelected).toBeCalled()
     })
+
     describe('getAverageOfSelected', () => {
       it('should set state with averages of two locations')
     })

@@ -4,7 +4,6 @@ import './CardContainer.css'
 import PropTypes from 'prop-types';
 
 const CardContainer = ({ schools, handleClick, selected }) => {
-  console.log('schols', schools)
   const schoolCards = schools.map( (school, index) => {
   const selectedCardLocations = selected.map( name => name.location);
   const selectedClass = selectedCardLocations.includes(school.location) ? 'selected' : ''

@@ -3,7 +3,8 @@ import Card from './Card';
 import './CardContainer.css'
 import PropTypes from 'prop-types';
 
-const CardContainer = ({ schools, handleClick, toggleClass, selected }) => {
+const CardContainer = ({ schools, handleClick, selected }) => {
+  console.log('cardconTTTT', schools)
   const schoolCards = schools.map( (school, index) => {
   const selectedCardLocations = selected.map( name => name.location);
   const selectedClass = selectedCardLocations.includes(school.location) ? 'selected' : ''
@@ -12,7 +13,6 @@ const CardContainer = ({ schools, handleClick, toggleClass, selected }) => {
       {...school}
       key={school.location}
       handleClick={handleClick}
-      toggleClass={toggleClass}
       selectedClass={selectedClass} />
   })
   return (
@@ -21,8 +21,8 @@ const CardContainer = ({ schools, handleClick, toggleClass, selected }) => {
 }
 
 CardContainer.propTypes = {
-  handleClick: PropTypes.func.isRequired,
-  schools: PropTypes.array.isRequired,
-  selected: PropTypes.array.isRequired
+  handleClick: PropTypes.func,
+  schools: PropTypes.array,
+  selected: PropTypes.array
 }
 export default CardContainer;

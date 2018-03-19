@@ -9,10 +9,11 @@ const Header = ({filterSchools}) => {
       <h1 className='title'>headcount 2.0</h1>
       <SearchBar filterSchools={filterSchools}/>
     </div>
-  )
-}
+  );
+};
 
 Header.propTypes = {
   filterSchools: PropTypes.func.isRequired
-}
+};
+
 export default Header;

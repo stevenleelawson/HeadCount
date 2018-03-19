@@ -1,9 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import { shallow, mount } from 'enzyme';
-import renderer from 'react-test-renderer';
-import PropTypes from 'prop-types';
+import { shallow } from 'enzyme';
 import  Card  from './Card';
 
 
